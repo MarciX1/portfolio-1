@@ -149,7 +149,7 @@ body.active .a-1 {
     background: var(--white);
 }
 
-body.active h1 {
+body.active .h1, body.active .h1-2 {
     color: var(--black);
 }
 
@@ -365,6 +365,7 @@ nav .navigation input:checked ~ .nav-list {
     padding: 20px 0;
     gap: 20px;
     background: var(--grey);
+    transition: 0.3s;
 }
 
 .content-box-3 {
@@ -381,6 +382,7 @@ nav .navigation input:checked ~ .nav-list {
     font-size: 32px;
     transition: 0.3s;
     position: relative;
+    transition: 0.3s;
 }
 
 .h1-2::before, .h1-2::after {
@@ -466,6 +468,7 @@ nav .navigation input:checked ~ .nav-list {
     font-size: 18px;
     transition: 0.3s;
     text-align: left;
+    transition: 0.3s;
 }
 
 .content-2 {

@@ -989,6 +989,10 @@ nav .navigation input:checked ~ .nav-list {
         transform: rotate(-7deg);
     }
 
+    .a-3 {
+        border: 3px solid rgba(255,255,255,0.15);
+    }
+
     body.active a.a-3 {
         border-color: rgba(0,0,0,0.3);
     }

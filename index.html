@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <nav class="nav-bar">
+    <nav class="nav-bar" id="navbar">
 
         <a href="#" class="logo">Portfolio.</a>
 
@@ -20,9 +20,9 @@
             <div class="hamburger"></div>
 
             <ul class="nav-list">
-                <li class="nav-items"><a href="#" class="active">Home</a></li>
-                <li class="nav-items"><a href="#">About</a></li>
-                <li class="nav-items"><a href="#">Favourites</a></li>
+                <li class="nav-items"><a href="#section-1" class="active">Home</a></li>
+                <li class="nav-items"><a href="#section-2">About</a></li>
+                <li class="nav-items"><a href="#section-3">Favourites</a></li>
                 <span class="line-1"></span>
                 <div id="toggle">
                     <i id="circle"></i>
@@ -33,7 +33,7 @@
 
     </nav>
 
-    <section class="box-1">
+    <section class="box-1" id="section-1">
 
         <div class="content-box-1">
 
@@ -67,7 +67,7 @@
 
     </section>
 
-    <section class="box-2">
+    <section class="box-2" id="section-2">
 
         <div class="content-box-3">
             <h1 class="h1-2">About <span class="span-3">Me</span></h1>
@@ -102,7 +102,7 @@
 
     </section>
 
-    <section class="box-3">
+    <section class="box-3" id="section-3">
 
         <div class="content-box-5">
             <h1 class="h1-3">What <span class="span-5">I like</span></h1>
@@ -168,6 +168,41 @@
         </div>
 
     </section>
+
+    <footer class="footer">
+
+        <div class="footer-box">
+            <div class="footer-h3">
+                <h3 class="h3">Contact Me</h3>
+            </div>
+            <div class="footer-text">
+                <p class="p-5">Email: example@gmail.com</p>
+                <p class="p-5">Mobile: 07 13 170 636</p>
+                <p class="p-5">Location: Ohio Street 420</p>
+            </div>
+        </div>
+        <div class="footer-box">
+            <div class="footer-h3">
+                <h3 class="h3">Useful Links</h3>
+            </div>
+            <div class="footer-text">
+                <a href="#section-1" class="a-5">Home</a>
+                <a href="#section-2" class="a-5">About</a>
+                <a href="#section-3" class="a-5">Favourites</a>
+            </div>
+        </div>
+
+        <div class="footer-btn">
+            <a href="#navbar" class="footer-btn-2">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+
+    </footer>
+
+    <footer class="footer-cr">
+        <p class="p-6">© 2023 Copyright: Portfolio | Privacy Policy</p>
+    </footer>
 
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <script>

@@ -20,6 +20,10 @@
     --inverted-green: #b1335c;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     transition: 0.3s;
     overflow-x: hidden;
@@ -132,11 +136,11 @@ html.active {
     box-shadow: 0 0 2px rgba(0,0,0,0.1) inset;
 }
 
-body.active .box-1, body.active .box-3 {
+body.active .box-1, body.active .box-3, body.active .footer-btn, body.active .footer-btn-2, body.active .footer-cr {
     background: var(--inverted-black);
 }
 
-body.active .box-2, body.active .a-3::before,  body.active .a-3::after, body.active .text-box-1 {
+body.active .box-2, body.active .a-3::before,  body.active .a-3::after, body.active .text-box-1, body.active .footer {
     background: var(--inverted-grey);
 }
 
@@ -150,11 +154,11 @@ body.active .a-3:hover {
 
 body.active .a-1, body.active .a-2, body.active .p-1, body.active .p-3, 
 body.active .a-3, body.active .h1, body.active .h1-2, body.active .h1-3,
-body.active .h2-1 {
+body.active .h2-1, body.active .h3, body.active .fa-solid, body.active .p-6 {
     color: var(--inverted-white);
 }
 
-body.active .p-4 {
+body.active .p-4, body.active .p-5, body.active .a-5 {
     color: rgba(0,0,0,0.65);
 }
 
@@ -169,21 +173,6 @@ body.active .a-1 {
 body.active a.a-3 {
     border-color: var(--green);
 }
-
-/*
-body.active a.a-2 {
-    background: var(--inverted-green);
-}
-
-body.active a.a-1, body.active a.a-1:hover {
-    background: var(--inverted-green);
-    border-color: var(--inverted-green);
-}
-
-body.active .span-1, body.active a.active, body.active .nav-items a:hover, body.active a.logo:hover {
-    color: var(--inverted-green);
-}
-*/
 
 /*Hamburger menu*/
 
@@ -570,7 +559,7 @@ nav .navigation input:checked ~ .nav-list {
     border-radius: 10px;
     display: grid;
     gap: 10px;
-    transition: 0.4s;
+    transition: 0.4s ease;
 }
 
 .text-content-1 {
@@ -623,6 +612,117 @@ nav .navigation input:checked ~ .nav-list {
     font-size: 18px;
     font-weight: 700;
     transform: skew(5deg);
+}
+
+/*FOOTER*/
+
+.footer {
+    width: 100%;
+    height: auto;
+    background: var(--grey);
+    padding: 20px 50px 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+}
+
+.footer-box {
+    display: grid;
+    gap: 10px;
+}
+
+.h3 {
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+    transition: 0.3s;
+}
+
+.h3::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 1.75px;
+    background: var(--green);
+    bottom: -1.75px;
+    transform: skew(-45deg);
+}
+
+.p-5, .a-5 {
+    display: grid;
+    color: rgba(255,255,255,0.5);
+    position: relative;
+}
+
+.footer-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-btn::before, .footer-btn::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(0deg, transparent, transparent, var(--green), var(--green), var(--green));
+}
+
+.footer-btn::before {
+    top: 0;
+    left: 0;
+    transform-origin: bottom right;
+    animation: btn-before 5s linear infinite;
+}
+
+.footer-btn::after {
+    top: 0;
+    left: 0;
+    transform-origin: bottom right;
+    animation: btn-after 5s linear infinite;
+    animation-delay: -2.5s;
+}
+
+.footer-btn-2 {
+    position: absolute;
+    background: var(--black);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer-cr {
+    background: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 15px;
+    overflow: hidden;
+    color: var(--white);
 }
 
 /*KEYFRAMES*/
@@ -680,6 +780,24 @@ nav .navigation input:checked ~ .nav-list {
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes btn-before {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes btn-after {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -771,6 +889,17 @@ nav .navigation input:checked ~ .nav-list {
     
     .text-box-1 {
         padding: 25px;
+    }
+
+    /*FOOTER*/
+
+    .footer {
+        padding: 20px 60px 20px 60px;
+    }
+    
+    .footer-btn {
+        bottom: 30px;
+        right: 30px;
     }
 
 }
@@ -877,6 +1006,22 @@ nav .navigation input:checked ~ .nav-list {
     
     .text-box-1 {
         padding: 30px;
+    }
+
+    /*FOOTER*/
+
+    .footer {
+        padding: 50px 80px;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        gap: 80px;
+    }
+
+    
+    .footer-btn {
+        bottom: 50px;
+        right: 80px;
     }
 
 }
@@ -1059,6 +1204,59 @@ nav .navigation input:checked ~ .nav-list {
         font-size: 20px;
     }
 
+    /*FOOTER*/
+
+    .footer {
+        padding: 50px 90px;
+        gap: 90px;
+    }
+    
+    .footer-box {
+        gap: 12px;
+    }
+    
+    .h3 {
+        font-size: 22px;
+    }
+    
+    .h3::before {
+        width: 95px;
+        height: 2.5px;
+        bottom: -2.5px;
+    }
+    
+    .p-5, .a-5 {
+        font-size: 18px;
+    }
+
+    .a-5::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.7);
+        transition: 0.5s ease;
+        bottom: 0;
+        left: 0;
+    }
+
+    .a-5:hover:before {
+        width: 50px;
+    }
+
+    body.active .a-5::before {
+        background: rgba(0,0,0,0.3);
+    }
+    
+    .footer-btn {
+        right: 90px;
+    }
+
+    .footer-btn:hover, body.active .footer-btn:hover {
+        background: var(--green);
+    }
+
 }
 
 /*1200px*/
@@ -1146,6 +1344,21 @@ nav .navigation input:checked ~ .nav-list {
     
     .text-box-1 {
         padding: 30px;
+    }
+
+    /*FOOTER*/
+
+    .footer {
+        padding: 50px 100px;
+        gap: 100px;
+    }
+    
+    .footer-box {
+        gap: 15px;
+    }
+    
+    .footer-btn {
+        right: 100px;
     }
 
 }

@@ -154,27 +154,22 @@ html.active {
 }
 
 body.active .box-1, body.active .box-3, body.active .footer-btn, 
-body.active .footer-btn-2, body.active .footer-cr, body.active .modal {
+body.active .footer-btn-2, body.active .footer-cr {
     background: var(--inverted-black);
 }
 
 body.active .box-2, body.active .a-3::before,  body.active .a-3::after, 
-body.active .text-box-1, body.active .footer, body.active .a-3, body.active .close-button {
+body.active .text-box-1, body.active .footer, body.active .a-3 {
     background: var(--inverted-grey);
 }
 
 body.active .a-3 {
-    border: 3px solid rgba(0,0,0,0.45);
-}
-
-body.active .a-3:hover {
     border-color: var(--green);
 }
 
 body.active .a-1, body.active .a-2, body.active .p-1, body.active .p-3, 
 body.active .a-3, body.active .h1, body.active .h1-2, body.active .h1-3,
-body.active .h2-1, body.active .h3, body.active .fa-solid, body.active .p-6, 
-body.active .modal-h1-text, body.active  .close-button{
+body.active .h2-1, body.active .h3, body.active .fa-solid, body.active .p-6 {
     color: var(--inverted-white);
 }
 
@@ -694,6 +689,7 @@ nav .navigation input:checked ~ .nav-list {
     display: grid;
     color: rgba(255,255,255,0.5);
     position: relative;
+    transition: 0.5s ease;
 }
 
 .footer-btn {
@@ -1174,8 +1170,12 @@ nav .navigation input:checked ~ .nav-list {
         border: 3px solid rgba(255,255,255,0.15);
     }
 
-    body.active a.a-3 {
-        border-color: rgba(0,0,0,0.3);
+    body.active .a-3 {
+        border: 3px solid rgba(0,0,0,0.45);
+    }
+
+    body.active .a-3:hover {
+        border-color: var(--green);
     }
 
     .a-3:hover {

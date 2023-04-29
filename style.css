@@ -24,9 +24,26 @@ html {
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--black) inset,
+                0 0 3px var(--grey) inset;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 8px var(--black) inset,
+                0 0 5px var(--grey) inset;
+}
+
 body {
     transition: 0.3s;
     overflow-x: hidden;
+    overflow: overlay;
 }
 
 ::selection {
@@ -136,11 +153,13 @@ html.active {
     box-shadow: 0 0 2px rgba(0,0,0,0.1) inset;
 }
 
-body.active .box-1, body.active .box-3, body.active .footer-btn, body.active .footer-btn-2, body.active .footer-cr {
+body.active .box-1, body.active .box-3, body.active .footer-btn, 
+body.active .footer-btn-2, body.active .footer-cr, body.active .modal {
     background: var(--inverted-black);
 }
 
-body.active .box-2, body.active .a-3::before,  body.active .a-3::after, body.active .text-box-1, body.active .footer {
+body.active .box-2, body.active .a-3::before,  body.active .a-3::after, 
+body.active .text-box-1, body.active .footer, body.active .a-3, body.active .close-button {
     background: var(--inverted-grey);
 }
 
@@ -154,7 +173,8 @@ body.active .a-3:hover {
 
 body.active .a-1, body.active .a-2, body.active .p-1, body.active .p-3, 
 body.active .a-3, body.active .h1, body.active .h1-2, body.active .h1-3,
-body.active .h2-1, body.active .h3, body.active .fa-solid, body.active .p-6 {
+body.active .h2-1, body.active .h3, body.active .fa-solid, body.active .p-6, 
+body.active .modal-h1-text, body.active  .close-button{
     color: var(--inverted-white);
 }
 
@@ -381,6 +401,7 @@ nav .navigation input:checked ~ .nav-list {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    position: relative;
     padding: 20px 0;
     gap: 20px;
     background: var(--grey);
@@ -456,6 +477,7 @@ nav .navigation input:checked ~ .nav-list {
     font-weight: 600;
     display: flex;
     border: 3px solid var(--green);
+    background: var(--grey);
     justify-content: center;
     align-items: center;
     position: relative;
@@ -606,12 +628,26 @@ nav .navigation input:checked ~ .nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;;
     color: var(--black);
     width: 100%;
     height: 100%;
     font-size: 18px;
     font-weight: 700;
     transform: skew(5deg);
+}
+
+.a-4::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    transform: skew(-5deg);
+    border-radius: 10px;
+    left: 0;
+    background: var(--white);
+    opacity: 0;
+    transition: 0.4s ease;
 }
 
 /*FOOTER*/
@@ -1202,6 +1238,11 @@ nav .navigation input:checked ~ .nav-list {
     
     .a-4 {
         font-size: 20px;
+    }
+
+    .a-4:hover:before {
+        width: 100%;
+        opacity: 0.3;
     }
 
     /*FOOTER*/

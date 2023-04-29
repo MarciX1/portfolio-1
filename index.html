@@ -7,6 +7,8 @@
     <title>Portfolio - MarciX</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/fa025ecd10.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     
@@ -88,9 +90,9 @@
                     nesciunt exercitationem voluptatibus?
                 </p>
 
-                <a href="#" class="a-3">
+                <button class="a-3">
                     Read more
-                </a>
+                </button>
 
             </div>
    
@@ -177,8 +179,8 @@
             </div>
             <div class="footer-text">
                 <p class="p-5">Email: example@gmail.com</p>
-                <p class="p-5">Mobile: 07 13 170 636</p>
-                <p class="p-5">Location: Ohio Street 420</p>
+                <p class="p-5">Mobile: 0 000 000 000</p>
+                <p class="p-5">Location: Country, Street Number</p>
             </div>
         </div>
         <div class="footer-box">
@@ -203,31 +205,6 @@
     <footer class="footer-cr">
         <p class="p-6">© 2023 Copyright: Portfolio | Privacy Policy</p>
     </footer>
-
-    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-    <script>
-
-        const body = document.querySelector('body');
-        const toggle = document.getElementById('toggle');
-        const togglebox = document.getElementById('togglebox');
-        const html = document.querySelector('html')
-        toggle.onclick = function() {
-            toggle.classList.toggle('active');
-            body.classList.toggle('active');
-        }
-        togglebox.onclick = function() {
-            html.classList.toggle('active');
-        }
-
-        var typed = new Typed(".span-1", {
-            strings: ["Frontend Developer", "Gamer", "YouTuber"],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 100,
-            loop: true
-        })
-
-    </script>
 
 </body>
 </html>

@@ -101,7 +101,7 @@ body {
     color: var(--white);
     font-size: 18px;
     font-weight: 600;
-    box-shadow: 0 -1px 1px rgba(255,255,255,0.4);
+    border-top: 2px solid rgba(255,255,255,0.4);
     transition: 0.3s;
 }
 
@@ -132,8 +132,8 @@ body {
     left: 0;
     position: absolute;
     background: var(--black);
-    transform: scale(0.9);
-    box-shadow: 0 0 2px rgba(0,0,0,0.1) inset;
+    transform: scale(0.85);
+    box-shadow: 0 0 2px rgba(255,255,255,0.8) inset;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -150,7 +150,7 @@ html.active {
 #toggle.active #circle {
     left: 25px;
     background: var(--white);
-    box-shadow: 0 0 2px rgba(0,0,0,0.1) inset;
+    box-shadow: 0 0 2px rgba(0,0,0,0.8) inset;
 }
 
 body.active .box-1, body.active .box-3, body.active .footer-btn, 
@@ -331,7 +331,7 @@ nav .navigation input:checked ~ .nav-list {
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
-    transition: 0.3s;
+    transition: .3s ease-in-out;
 }
 
 .a-2 {
@@ -962,7 +962,7 @@ nav .navigation input:checked ~ .nav-list {
     
     .nav-items a {
         padding: 5px 10px;
-        box-shadow: none;
+        border-top: none;
     }
     
     /*Toggle: White - Black*/
@@ -1070,10 +1070,6 @@ nav .navigation input:checked ~ .nav-list {
         padding: 5px 15px;
     }
 
-    .nav-items a.active {
-        color: var(--green);
-    }
-
     .nav-items a:hover, .logo:hover {
         color: var(--green);
     }
@@ -1102,7 +1098,7 @@ nav .navigation input:checked ~ .nav-list {
     .a-1:hover, body.active .a-1:hover {
         background: var(--green);
         transform: scale(1.15);
-        box-shadow: 0 0 5px var(--green);
+        box-shadow: 0 0 8px var(--green);
     }
     
     .a-2 {

@@ -3,6 +3,8 @@ const toggleTwo = document.querySelector('.toggle')
 const toggle = document.getElementById('toggle');
 const togglebox = document.getElementById('togglebox');
 const html = document.querySelector('html');
+const navList = document.getElementById('nav-list');
+const hamburger = document.getElementById('hamburger');
 
 // Light-Dark Toggle
 toggle.onclick = function() {
@@ -13,6 +15,19 @@ toggle.onclick = function() {
 // Navbar Fix
 toggleTwo.onclick = function() {
     html.classList.toggle('active');
+    navList.classList.toggle('active');
+    togglebox.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+// Navbar outside click
+document.onclick = function(t) {
+    if(t.target.id !== 'nav-list' && t.target.id !== 'togglebox') {
+        html.classList.remove('active');
+        navList.classList.remove('active');
+        togglebox.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
 }
 
 // Typewriter

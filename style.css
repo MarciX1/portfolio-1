@@ -202,7 +202,7 @@ body.active a.a-3 {
     bottom: 15px;
 }
 
-.hamburger {
+.hamburger, #hamburger {
     position: relative;
     width: 25px;
     height: 4px;
@@ -215,7 +215,7 @@ body.active a.a-3 {
     transition: 0.1s;
 }
 
-.hamburger::before, .hamburger::after {
+.hamburger::before, .hamburger::after, #hamburger::before, #hamburger::after {
     content: "";
     position: absolute;
     height: 4px;
@@ -226,29 +226,31 @@ body.active a.a-3 {
     transition: 0.6s;
 }
 
-.hamburger::before {
+.hamburger::before, #hamburger::before {
     top: -10px;
     width: 30px;
     right: 0;
 }
 
-.hamburger::after {
+.hamburger::after, #hamburger::after {
     top: 10px;
     width: 28px;
     right: 0;
 }
 
-nav .navigation input:checked ~ .hamburger {
+/*Navbar close-open*/
+
+nav .navigation input:checked ~ .hamburger, #hamburger.active {
     background: transparent;
 }
 
-nav .navigation input:checked ~ .hamburger::before {
+nav .navigation input:checked ~ .hamburger::before, #hamburger.active::before {
     top: 0;
     transform: rotate(-45deg);
     width: 30px;
 }
 
-nav .navigation input:checked ~ .hamburger::after {
+nav .navigation input:checked ~ .hamburger::after, #hamburger.active::after {
     top: 0;
     transform: rotate(45deg);
     width: 30px;
@@ -257,6 +259,18 @@ nav .navigation input:checked ~ .hamburger::after {
 nav .navigation input:checked ~ .nav-list {
     right: 0;
     box-shadow: -1px 0 10px rgba(0,0,0,0.6);
+}
+
+#hamburger::before, #hamburger::after {
+    transform: rotate(0);
+}
+
+#nav-list {
+    right: calc(-100% + 50px);
+}
+
+#nav-list.active {
+    right: 0;
 }
 
 /*SECTION 1*/
